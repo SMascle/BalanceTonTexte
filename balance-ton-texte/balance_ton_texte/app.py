@@ -28,7 +28,7 @@ def contacted():
 		
 @app.route("/model")
 def model():
-	return render_template("contact.html", title='model')
+	return render_template("model.html", title='model')
 
 
 if __name__ == '__main__':
