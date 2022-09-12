@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% if title %}
+		<title>Balance Ton Texte - {{ title }}</title>
+	{% else %}
+		<title>Balance Ton Texte - Sans titre</title>
+	{% endif %}
+	
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+</head>
+
+<body>
+	<header class="site-header">
+	      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+		<div class="container">
+		  <a class="navbar-brand mr-4" href="/">balance_ton_texte</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarToggle">
+		    <div class="navbar-nav mr-auto">
+		      <a class="nav-item nav-link" href="/">Home</a>
+		      <a class="nav-item nav-link" href="/about">About</a>
+		      <a class="nav-item nav-link" href="/model">model</a>
+
+		    </div>
+		    <!-- Navbar Right Side -->
+		    <div class="navbar-nav">
+		      		      <a class="nav-item nav-link" href="/contact">contact</a>
+		    </div>
+		  </div>
+		</div>
+	      </nav>
+	    </header>
+
+	
+	
+<div class="container">	
+	<h1>La team NoHaTien (nom non validé) vous présente ... wym</h1>
+		<image src="{{ url_for('static', filename='images/logo_wym.png')}}">	
+</div> 
+
+<h1> Qui sommes-nous ?</h1>
+<h3> WYM Group est une entreprise familiale qui s’engage a offrir des produits de haute qualité à prix abordables tout en restant flexibles pour répondre aux besoins des clients. Nous misons sur l’automatisation et l’innovation pour proposer des solutions d’affaires créatives. </h3>
+<h3> Nous offrons des produits diversifiés s’adressant aussi bien aux marchés domestique, commercial/industriel et institutionnel. Ça inclut des produits de papier tissu, des détergents ainsi que des produits de protection, en plus des services de conversion de bobines mères Selon les besoins de nos clients.</h3>
+
+<image src="{{ url_for('static', filename='images/wym_QSN.png')}}">	
+
+
+<h1> Services de Conversion </h1>
+
+<h3> Que vous soyez une petite ou grande entreprise de conversion de papier, nous disposons des équipements et des produits pour répondre à vos besoins. Si vos équipements ne sont pas adaptés aux grandes bobines mères de papier tissu, nous pourrons convertir pour vous selon les dimensions de vos machines. Nous répondrons aux besoins de tous nos clients, quelle que soit leur taille d’exploitation et nous garantissons un produit de qualité vous permettant des opérations efficaces et rentables. </h3>
+<h3> Nos équipements nous permettent de réduire la largeur et le diamètre des bobines mères pour convertir en serviettes de table, mouchoirs, mouchoirs de poche ou papier hygiénique. </h3>
+<h3> Qualité, flexibilité, accessibilité, n’est pas juste un slogan mais c’est notre façon d’être et de faire pour assurer pleinement la satisfaction de nos clients. </h3>
+
+<image src="{{ url_for('static', filename='images/wym_SdC.png')}}">	
+
+
+<h1> à propos </h1>
+
+<h2> Notre mission </h2>
+<h3> WYM Group s’engage à offrir des produits de haute qualité à prix accessibles et abordables tout en restant flexibles pour répondre aux besoins des clients. Nous misons sur l’automatisation et l’innovation pour proposer des solutions d’affaires créatives.</h3>
+<image src="{{ url_for('static', filename='images/wym_apnm.png')}}">	
+
+
+
+<h2> Ce que nous faisons </h2>
+<h3> WYM Group est une entreprise familiale. Nous offrons des produits diversifiés s’adressant aussi bien aux marchés domestique, commercial/industriel et institutionnel. Ça inclut des produits de papier tissu,  des détergents, des produits de protection, en plus des services de conversion  des bobines mères selon les besoins des clients.</h3>
+<h3> WYM Group offre ses propres marques mais reste disposée à produire sous votre marque si le volume le justifie.</h3>
+<h3> Notre entreprise offre une large gamme de produits de tissus, y compris: papier hygiénique, serviettes de table, mouchoirs, papier de cuisine, essuie tout ainsi qu’une large gamme de produits détergents à usage domestique, commercial ou industriel, et des produits de protection comme des masques jetables de qualité supérieure, des produits désinfectants et des serviettes humides pour différents usages.</h3>
+<h3> Nous sommes une entreprise qui reste à l’affût des avancées technologiques et l’évolution des besoins des clients.</h3>
+<image src="{{ url_for('static', filename='images/wym_apcqnf.png')}}">	
+
+
+<h1> Joignez-vous à l'équipe Wym ! </h1>
+
+
+
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+   
+
+</body>
+
+</html>
+
+
+
