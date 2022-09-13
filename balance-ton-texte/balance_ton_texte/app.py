@@ -38,7 +38,6 @@ def contact():
 		                      'telephone':form.telephone.data, 'commentaire':form.commentaire.data})
 		insert_contact(list_comment[-1].get('nom'), list_comment[-1].get('prenom'), list_comment[-1].get('telephone'),\
 					  list_comment[-1].get('email'), list_comment[-1].get('commentaire'))
-		import pdb; pdb.set_trace()
 		return redirect(url_for('contacted'))
 	return render_template("contact.html", title='contact', form=form)
 	
