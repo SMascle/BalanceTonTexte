@@ -29,3 +29,11 @@ class CommentaireForm(FlaskForm):
 
     submit = SubmitField('Postez')                                               
 
+
+class TexteForm(FlaskForm):
+    texte = StringField('Texte', validators=[DataRequired(),
+                                                   Length(min=2, message='Texte non valide')])
+
+    submit = SubmitField('Valider')
+
+

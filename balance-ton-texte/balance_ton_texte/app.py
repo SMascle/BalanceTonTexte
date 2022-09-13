@@ -3,10 +3,12 @@
 from flask import Flask, render_template, url_for, request, flash, redirect
 #from flask_sqlalchemy import SQLAlchemy
 
+
 #import dbutils
 from db_utils import insert_contact, insert_summary 
-from forms import CommentaireForm  #c'est dans le fichier forms.py qui est dans le même dossier
+from forms import CommentaireForm, TexteForm   #c'est dans le fichier forms.py qui est dans le même dossier
 # import db
+
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = '6cca083ea5392bae903fe796d5a6c5d7'
@@ -16,7 +18,7 @@ app.config['SECRET_KEY'] = '6cca083ea5392bae903fe796d5a6c5d7'
 
 list_comment = [] #liste de dictionnaires qui contiendra les commentaires : 5 éléments : 'nom' 'prenom' 'email' 'telephone' 'commentaire'
 list_textes = [] #liste qui contiendra les textes que l'on demande à synthétiser
-
+list_synth = [] #liste qui se complètera de synthèses des textes de la liste au dessus
 
 @app.route("/")
 @app.route("/home")
@@ -46,10 +48,17 @@ def contact():
 def contacted():
 	return render_template("contacted.html", title='contacted')
 		
-@app.route("/model")
+@app.route("/model", methods=['GET', 'POST'])
 def model():
-	return render_template("model.html", title='model')
+	text = TexteForm()
+	if text.validate_on_submit(): #si on vient de poster un commentaire valide
+		flash('Votre texte a bien été enrengistré, Veuillez patienter pendant que nous le synthétisons.', 'success')
 
+		list_textes.append(text.texte.data)
+
+
+	return render_template("model.html", title='model', text=text, list_textes=list_textes, list_synth =list_synth)
+	
 
 if __name__ == '__main__':
 	app.run(debug=True)
