@@ -72,7 +72,7 @@ def insert_contact(nom, prenom, tel, email, comm):
             session.commit()
 
 
-def insert_contact(text, summary):
+def insert_summary(text, summary):
     with Session(engine) as session:
         session.begin()
         try:
@@ -87,4 +87,4 @@ def insert_contact(text, summary):
             session.commit()
 
 # test
-# insert_contact('bla bla bla', 'bla')
+# insert_summary('bla bla bla', 'bla')
