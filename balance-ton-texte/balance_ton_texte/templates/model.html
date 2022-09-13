@@ -8,6 +8,64 @@
 	
 </div> 
 
+<div class="content-section">
+
+	<form method="POST" action="">
+		{{ text.hidden_tag()}}
+		<fieldset class="text-group">
+			<legend class="border-bottom mb-4">Posez délicatement votre texte.</legend>
+			<div class="text-group">
+				{{ text.texte.label(class="text-control-label") }}
+
+				{% if text.texte.errors %}
+					{{ text.texte(class="text-control text-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+						{% for error in text.texte.errors %}
+							<span>{{ error }}</span>
+						{% endfor %}
+						</div>
+				{% else %}
+				{{ text.texte(class="text-control text-control-lg") }}
+				{% endif %}
+			</div>
+		</fieldset>
+		<div class="text-group">
+			{{ text.submit(class="btn btn-outline-info") }}
+
+		</div>
+
+
+	</form>
+
+</div>
+
+</body>
+
+<h1> Votre Texte :</h1>
+
+<body>
+
+{% for te in liste_textes %}
+	<div class="container">	
+		<h3> {{te}}</h3>
+	</div>	
+{% endfor %}
+	
+
+
+</body>
+
+<h1> Votre Synthèse :</h1>
+
+<body>
+
+{% for ts in liste_synth %}
+	<div class="container">	
+		<h3> {{ts}}</h3>
+	</div>	
+{% endfor %}
+
+
 {% endblock content %}
 
 
