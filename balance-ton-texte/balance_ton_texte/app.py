@@ -3,9 +3,10 @@
 from flask import Flask, render_template, url_for, request, flash, redirect
 #from flask_sqlalchemy import SQLAlchemy
 
-
+#import dbutils
+from db_utils import insert_contact, insert_summary 
 from forms import CommentaireForm  #c'est dans le fichier forms.py qui est dans le même dossier
-
+# import db
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = '6cca083ea5392bae903fe796d5a6c5d7'
@@ -35,7 +36,9 @@ def contact():
 
 		list_comment.append({'nom':form.nom.data, 'prenom':form.prenom.data, 'email':form.email.data,
 		                      'telephone':form.telephone.data, 'commentaire':form.commentaire.data})
-
+		insert_contact(list_comment[-1].get('nom'), list_comment[-1].get('prenom'), list_comment[-1].get('telephone'),\
+					  list_comment[-1].get('email'), list_comment[-1].get('commentaire'))
+		import pdb; pdb.set_trace()
 		return redirect(url_for('contacted'))
 	return render_template("contact.html", title='contact', form=form)
 	
