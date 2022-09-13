@@ -21,8 +21,8 @@ class CommentaireForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(),
                                                    Email(message = 'mail non valide')])  #permet de faire un email
   
-    telephone = StringField('Telephone', validators=[DataRequired(),
-                                                   Length(min=0, max=16)])  #numero entre 0 et 16, il faut aussi apprendre à le laisser optionelle ?
+    telephone = StringField('Telephone', validators=[
+                                                   Length(max=16)])  #numero entre 0 et 16, il faut aussi apprendre à le laisser optionelle ?
 
     commentaire = StringField('Commentaire', validators=[DataRequired(),
                                                    Length(min=2, max=500)])  #commentaire entre 2 et 500 lettres
