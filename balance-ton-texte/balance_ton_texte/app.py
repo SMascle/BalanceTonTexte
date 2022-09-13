@@ -2,7 +2,13 @@
 
 from flask import Flask, render_template, url_for, request
 
+from forms import CommentaireForm  #c'est dans le fichier forms.py qui est dans le même dossier
+
 app = Flask(__name__)
+
+app.config['SECRET_KEY'] = '6cca083ea5392bae903fe796d5a6c5d7'
+ #permet juste d'avoir une clé de sécurité, très utile contre les attaques de hacker classiques en ligne
+# dans ce cas on importera sur python 'secrets' , et on génerera un token avec secrets.token_hex(16) et la réponse se met comme Secret_Key
 
 
 
@@ -17,7 +23,8 @@ def about():
 
 @app.route("/contact")
 def contact():
-	return render_template("contact.html", title='contact')
+	form = CommentaireForm()   #form sera nos commentaires
+	return render_template("contact.html", title='contact', form=form)
 	
 	
 @app.route("/contacted")
