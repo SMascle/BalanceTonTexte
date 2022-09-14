@@ -7,8 +7,10 @@ from flask import Flask, render_template, url_for, request, flash, redirect
 from model_utils import summarize
 
 #import dbutils
-from db_utils import insert_contact, insert_summary 
-from forms import CommentaireForm, TexteForm   #c'est dans le fichier forms.py qui est dans le même dossier
+
+from balance_ton_texte.db_utils import insert_contact, insert_summary  # pip install psycopg2-binary
+from balance_ton_texte.forms import CommentaireForm, TexteForm   #c'est dans le fichier forms.py qui est dans le même dossier
+
 # import db
 
 app = Flask(__name__)
@@ -67,6 +69,8 @@ def model():
 
 	return render_template("model.html", title='model', text=text, list_textes=list_textes, list_synth =list_synth, summary=summary)
 	
+def main():
+	app.run(debug=True, host='0.0.0.0', port=8000)
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	main()

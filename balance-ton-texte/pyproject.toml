@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "balancetontexte"
+name = "balance_ton_texte"
 version = "0.1.0"
 description = ""
 authors = ["SMascle <sebastien.mascle@le-campus-numerique.fr>"]
@@ -16,3 +16,6 @@ psycopg2-binary = "^2.9.3"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+app = "balance_ton_texte.app:main"
