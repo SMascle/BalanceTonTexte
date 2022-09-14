@@ -3,6 +3,8 @@
 from flask import Flask, render_template, url_for, request, flash, redirect
 #from flask_sqlalchemy import SQLAlchemy
 
+#import Model
+from model_utils import summarize
 
 #import dbutils
 
@@ -52,14 +54,20 @@ def contacted():
 		
 @app.route("/model", methods=['GET', 'POST'])
 def model():
+	summary = 'Votre résumé ici'
 	text = TexteForm()
 	if text.validate_on_submit(): #si on vient de poster un commentaire valide
+
 		flash('Votre texte a bien été enrengistré, Veuillez patienter pendant que nous le synthétisons.', 'success')
+
+		summary =  summarize(text.texte.data)
 
 		list_textes.append(text.texte.data)
 
+		list_synth.append(summary)
 
-	return render_template("model.html", title='model', text=text, list_textes=list_textes, list_synth =list_synth)
+
+	return render_template("model.html", title='model', text=text, list_textes=list_textes, list_synth =list_synth, summary=summary)
 	
 def main():
 	app.run(debug=True, host='0.0.0.0', port=8000)
