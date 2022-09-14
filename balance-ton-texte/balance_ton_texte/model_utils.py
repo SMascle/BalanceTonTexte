@@ -9,7 +9,7 @@ def summarize(text):
 
 	debug = False
 
-	url = 'http://127.0.0.1:5000/model/predict'
+	url = 'http://127.0.0.1:5001/model/predict'
 
 	data = {'text': [text]}
 
@@ -27,13 +27,13 @@ def summarize(text):
 			print('Server Error')
 		elif response.status_code == 404:
 			print("Page not found")
-
+	import pdb; pdb.set_trace
 	return response.json()['summary_text'][0] 
 
 	
 if __name__	== '__main__':
 
-	user_text = 'The Korean Air executive who kicked up a fuss over a bag of nuts will resign from her remaining posts with the airline , the company chairman -- who is also her father -- said Friday . The executive , Heather Cho , found herself at the center of a media storm after she ordered that a plane turn back to the gate and that a flight attendant be removed -- all because she was served nuts in a bag instead of on a plate in first class . Although her role put her in charge of in-flight service , she was only a passenger on the flight and was not flying in an official'
+	user_text = 'HELLO' 
 
 	resumer =  summarize(user_text)
 	
