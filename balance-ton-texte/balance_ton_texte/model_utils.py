@@ -9,7 +9,7 @@ def summarize(text):
 
 	debug = False
 
-	url = 'http://127.0.0.1:5001/model/predict'
+	url = 'http://model:5000/model/predict'
 
 	data = {'text': [text]}
 
@@ -27,7 +27,7 @@ def summarize(text):
 			print('Server Error')
 		elif response.status_code == 404:
 			print("Page not found")
-	import pdb; pdb.set_trace
+
 	return response.json()['summary_text'][0] 
 
 	
