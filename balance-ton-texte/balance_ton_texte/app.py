@@ -5,7 +5,7 @@ from flask import Flask, render_template, url_for, request, flash, redirect
 
 
 #import dbutils
-from db_utils import insert_contact, insert_summary 
+from db_utils import insert_contact, insert_summary # pip install psycopg2-binary
 from forms import CommentaireForm, TexteForm   #c'est dans le fichier forms.py qui est dans le même dossier
 # import db
 
