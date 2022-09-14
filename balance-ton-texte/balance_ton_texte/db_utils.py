@@ -10,7 +10,7 @@ from sqlalchemy.orm import Session
 # needed for creating a table with a pseudo-sql syntax
 Base = declarative_base()
 # engine declared as type://user:password@port:port/name
-engine = create_engine('postgresql://wym_admin:admin@localhost:5432/postgres')
+engine = create_engine('postgresql://wym_admin:admin@postgres:5432/postgres')
 # no idea
 meta=MetaData()
 # sql = 'DROP TABLE IF EXISTS contact;'

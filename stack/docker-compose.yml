@@ -1,0 +1,31 @@
+version: '2'
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=wym_admin
+    networks:
+      - default
+      - service-proxy
+    ports:
+      - '5432:5432'
+    volumes:
+      - 'db_volume:/var/lib/postgresql/data'
+    labels:
+      description: "Postgresql Database"
+      service: "postgresql"
+  web:
+    container_name: balancetontexte
+    build: ../balance-ton-texte
+    volumes:
+      - .:/balance_ton_texte/
+    ports:
+      - "8000:8000"
+    depends_on:
+      - 'postgres'
+networks:
+  service-proxy:
+volumes:
+  db_volume:
+
