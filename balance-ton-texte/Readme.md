@@ -5,7 +5,7 @@ Data+ Aout/Sept. 2022 Cas D’étude #3 KIT APPRENANT Partie II Mini projet end-
 Pyenv : Pyenv local 3.8.10   (si non installé : pyenv install 3.8.10)
 
 poetry : poetry install     (à lancer depuis balance-ton-texte)
-
+	 poetry build
 docker : docker compose up --build     (à lancer depuis stack)
 
 
