@@ -5,8 +5,10 @@ from flask import Flask, render_template, url_for, request, flash, redirect
 
 
 #import dbutils
-from balance_ton_texte.db_utils import insert_contact, insert_summary 
+
+from balance_ton_texte.db_utils import insert_contact, insert_summary  # pip install psycopg2-binary
 from balance_ton_texte.forms import CommentaireForm, TexteForm   #c'est dans le fichier forms.py qui est dans le même dossier
+
 # import db
 
 app = Flask(__name__)
