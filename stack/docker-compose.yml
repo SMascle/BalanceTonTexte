@@ -5,9 +5,6 @@ services:
     environment:
       - POSTGRES_PASSWORD=admin
       - POSTGRES_USER=wym_admin
-    networks:
-      - default
-      - service-proxy
     ports:
       - '5432:5432'
     volumes:
@@ -15,6 +12,10 @@ services:
     labels:
       description: "Postgresql Database"
       service: "postgresql"
+  model:
+    image: 'quay.io/codait/max-text-summarizer:latest'
+    ports:
+      - "5000:5000"
   web:
     container_name: balancetontexte
     build: ../balance-ton-texte
@@ -24,8 +25,8 @@ services:
       - "8000:8000"
     depends_on:
       - 'postgres'
-networks:
-  service-proxy:
+      - 'model'
+
 volumes:
   db_volume:
 

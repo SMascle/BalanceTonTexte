@@ -4,7 +4,7 @@ from flask import Flask, render_template, url_for, request, flash, redirect
 #from flask_sqlalchemy import SQLAlchemy
 
 #import Model
-from model_utils import summarize
+from balance_ton_texte.model_utils import summarize
 
 #import dbutils
 
@@ -61,7 +61,7 @@ def model():
 		flash('Votre texte a bien été enrengistré, Veuillez patienter pendant que nous le synthétisons.', 'success')
 
 		summary =  summarize(text.texte.data)
-
+		insert_summary(text.texte.data, summary)
 		list_textes.append(text.texte.data)
 
 		list_synth.append(summary)
